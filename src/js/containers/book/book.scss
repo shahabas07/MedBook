@@ -1,0 +1,286 @@
+$primary-green: #16C47F ;
+$dark-green: #41644A;
+$light-green: #0D4715;
+$background: #F1F0E9;
+$text-dark: #263238;
+$text-light: #f5f5f5;
+
+.booking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $background;
+  border-radius: 12px;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $text-dark;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: $dark-green;
+  font-weight: 500;
+}
+
+.calendar-placeholder {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid $light-green;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: $dark-green;
+}
+
+.calendar-nav button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: $primary-green;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.weekdays {
+  display: contents;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  color: $dark-green;
+  padding: 0.5rem;
+}
+
+.days {
+  display: contents;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: $text-dark;
+}
+
+.day:hover {
+  transform: scale(1.1);
+}
+
+.available {
+  background-color: lighten($light-green, 15%);
+  color: $dark-green;
+}
+
+.available:hover {
+  background-color: $light-green;
+}
+
+.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.selected {
+  background-color: $primary-green;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.3);
+}
+
+.time-slots-placeholder {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid $light-green;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.time-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.6rem;
+  border: 1px solid $light-green;
+  border-radius: 8px;
+  background: lighten($light-green, 20%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: $text-dark;
+}
+
+.time-slot:hover {
+  background: $light-green;
+  border-color: $primary-green;
+  transform: translateY(-3px);
+}
+
+.time-selected {
+  background: $primary-green;
+  color: white;
+  border-color: $primary-green;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+}
+
+.booking-form-placeholder {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border: 2px solid $light-green;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: $dark-green;
+  // color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid $light-green;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: $primary-green;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: $primary-green;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: $dark-green;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Standardized Animations */
+.title-animate {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.float-animate {
+  animation: fadeIn 0.6s ease-out 0.2s forwards;
+}
+
+.slide-in {
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInSlide {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.fly-in {
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+.bounce-animate {
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.pulse-animate {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.form-animate {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+  
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
+}
+
+/* Standard transitions for interactive elements */
+.day, .time-slot, .submit-btn {
+  transition: 
+    transform 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
