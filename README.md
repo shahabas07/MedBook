@@ -1,9 +1,5 @@
-## Getting Started
-
-Commence development by initiating the the following commands:
-
-For running the application in development mode, run:
-
+/js/containers",
+        "@server": "server"
 ```bash
 npm run start
 ```
